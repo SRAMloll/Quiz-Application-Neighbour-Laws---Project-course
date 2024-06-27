@@ -1,0 +1,6 @@
+Potential ideas:
+
+Online Quiz Application: Create an online quiz application using Python for backend logic, database management, and JavaScript for the frontend quiz interface and scoring. Voisinage : https://edito.seloger.com/actualites/france/quiz-special-voisins-j-ai-droit-j-ai-droit-article-16872.html 
+
+Alarm Clock (JavaScript) – Create a functional alarm clock using JavaScript, HTML, and CSS. This project covers a broad application of the programming languages used and covers numerous associated programming skills. 
+
