@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbour Quiz</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="app">
+        <div  class="questions">
+    
+        $$quiz$$
+
+        </div>
+        <br><br>
+        <div class="choices">
+    
+            $$choices$$
+    
+        </div>
+        <br><br>
+        <div class="request">
+        
+        <h2 id="instruction"> Please type your answer below: A, B or C: </h2>
+
+        </div><br>
+        <div class="reply">
+        
+            <form action="/quiz" method = "get" id = queryform>
+            <input type="text" id = "query" placeholder = "Please enter A, B or C" name ="query"> <br> <br>
+            <input type = "submit" value = "Submit Answer" id="querybutton">
+            </form>
+        </div> <br>
+
+        <div class="restart">
+            
+            <form action="/">
+                    <input type="submit" value="Restart the Quiz!" id="restartbutton" />
+            </form>
+                <br>
+            </div>
+        </div> <br><br>
+
+        <div class="result">
+            $$result$$
+        </div>
+</div>
+</body>
+</html>

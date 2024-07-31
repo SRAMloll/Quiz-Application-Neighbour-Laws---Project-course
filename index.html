@@ -8,15 +8,17 @@
 </head>
 <body>
     <div>
-        <header> The Ultimate Neighbour Quiz </header><br>
+        <header id="title"> The Neighbour Quiz </header><br>
 
     </div>
     <div>
-        <img src="static/neighbour.png" id = "backgroundImage" alt="neighbour">
+        <img src="static/neighbour.png" id = "Image" alt="neighbour">
         <br><br><br>
     </div>
-    <div>
-        <a href="quiz.html"><input type="button" value = "Start the Quiz" id ="startButton"></a>
+    <div class="start">
+        <form action="/quiz.html">
+            <input type="submit" value="Start the Quiz!" id="startbutton" />
+        </form>
         <br>
     </div>
 </body>
