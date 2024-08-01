@@ -4,49 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neighbour Quiz</title>
+    <link rel="stylesheet" href="static/style.css">
+
 </head>
 <body>
     <header>
         
     </header>
-    <div class="app">
-        <div  class="questions">
+    <div class="container"> 
+        <div  class="question">
     
-        $$quiz$$
+            $$quiz$$
 
         </div>
         <br><br>
-        <div class="choices">
+        <div class="options">
     
             $$choices$$
     
         </div>
         <br><br>
-        <div class="request">
-        
-        <h2 id="instruction"> Please type your answer below: A, B or C: </h2>
+                
+        <div id="instruction"> Please type your answer below: A, B or C: 
 
-        </div><br>
-        <div class="reply">
+        </div>
+
         
+             
             <form action="/quiz" method = "get" id = queryform>
             <input type="text" id = "query" placeholder = "Please enter A, B or C" name ="query"> <br> <br>
             <input type = "submit" value = "Submit Answer" id="querybutton">
             </form>
-        </div> <br>
+        
 
-        <div class="restart">
+        <br>
             
             <form action="/">
                     <input type="submit" value="Restart the Quiz!" id="restartbutton" />
             </form>
                 <br>
-            </div>
-        </div> <br><br>
+        
+    </div>
 
-        <div class="result">
-            $$result$$
-        </div>
-</div>
 </body>
 </html>

@@ -1,0 +1,19 @@
+ question2 = Question("You live in Lausanne and the branches of your neighbour's cherry tree encroach on your property:", ["A. You have the right to pick the cherries from the branches overhanging your property.",
+        "B. You can pick the cherries, only if they have fallen from the tree.", "C. You do not have the right to pick the cherries, whether on the tree or on the ground."], "A"),
+    question3 = Question("Your neighbour has installed a camera outside his house. Do they have to ask your permission?", ["A. Yes, you cannot be sure what he is recording.", "B. No, he or she has the right to protect his/her private property.", "C. It depends where the camera is oriented."], "C"),
+    question4 = Question("Is your neighbour allowed to burn branches, twigs and dead leaves in his garden?", ["A. Yes", "B. No", "C. Only in the countryside."], "A"),
+    question5 = Question("You are helping your neighbour to dig a hole in his garden for his swimming pool. While he's away, your pick hits a historical chest containing gold coins. Who does this treasure belong to?", ["A. The one who found the treasure.", "B. The neighbour who is the owner of the land.", "C. None of them."], "C")
+      
+
+   
+   correct code for replace:
+
+       ### showing the questions and the choices
+    html_page = html_page.replace("$$quiz$$", q1.question)
+    options = q1.option_1 + "<br>" + q1.option_2 + "<br>" + q1.option_3
+    return html_page.replace("$$choices$$", options)
+
+    image / <div>
+        <img src="static/neighbour.png" id = "Image" alt="neighbour">
+        <br><br><br>
+        </div>

@@ -34,7 +34,7 @@ def play_quiz():
       
                       
     ### Creating quiz questions
-    q1 = Question("Loud music, slamming doors: your neighbour is giving you a hard time! To constitute a night-time disturbance, noise pollution must be committed:", "A. Between 9 p.m. and 7 a.m.", "B. Between 10 p.m. and 6 a.m.", "C. From sunset to sunrise", "B")
+    q1 = Question("Question 1: Loud music, slamming doors: your neighbour is giving you a hard time! To constitute a night-time disturbance, noise pollution must be committed:", "A. Between 9 p.m. and 7 a.m.", "B. Between 10 p.m. and 6 a.m.", "C. From sunset to sunrise", "B")
    
     ### Showing the questions and the options
     html_page = html_page.replace("$$quiz$$", q1.question)
