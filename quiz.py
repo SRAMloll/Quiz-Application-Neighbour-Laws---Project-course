@@ -10,37 +10,56 @@ def get_html(page_name) :
     html_file.close()
     return content
 
-
-
-## route 1: welcome page and rules
+## route 1: welcome page 
 
 @app.route("/")
 def homepage():
     return get_html("index")
 
-## route 2: play the quiz page
+## route 2: let the user play the quiz page
 @app.route("/quiz.html")
 def play_quiz():
-    html_page = get_html("quiz")
-        
-    ### Creating a class Question for each question of the quiz
-    class Question:
-        def __init__ (self, question, option_1, option_2, option_3, correct_answer):
-            self.question = question
-            self.option_1 = option_1
-            self.option_2 = option_2
-            self.option_3 = option_3
+    return get_html("quiz")
+
+# route 3: checking answers and displaying results
+@app.route("/result.html")
+def check_results():
+    html_page = get_html("result")
+
+    ### Creating a class Question:
+    class Quiz_game:
+        def __init__ (self, correct_answer, user_answer):
             self.correct_answer = correct_answer
-      
-                      
-    ### Creating quiz questions
-    q1 = Question("Question 1: Loud music, slamming doors: your neighbour is giving you a hard time! To constitute a night-time disturbance, noise pollution must be committed:", "A. Between 9 p.m. and 7 a.m.", "B. Between 10 p.m. and 6 a.m.", "C. From sunset to sunrise", "B")
-   
-    ### Showing the questions and the options
-    html_page = html_page.replace("$$quiz$$", q1.question)
-    options = q1.option_1 + "<br>" + q1.option_2 + "<br>" + q1.option_3
-    return html_page.replace("$$choices$$", options)
+            self.user_answer = user_answer
+            
+            
+        def check_answer (self):
+            return self.user_answer == self.correct_answer
+              
+                                
+        def update_score (self):
+            score_question = 0
+            if self.check_answer():
+                score_question =+ 1 
+            return score_question
+                        
+    ### Creating quiz questions (objects)
+    q1 = Quiz_game("B", flask.request.args.get("query1"))
+    q2 = Quiz_game("A", flask.request.args.get("query2"))
+    q3 = Quiz_game("C", flask.request.args.get("query3"))
+    q4 = Quiz_game("A", flask.request.args.get("query4"))
+    q5 = Quiz_game("C", flask.request.args.get("query5"))
     
+    questions_list = [q1, q2, q3, q4, q5]
+    
+    ### Calling the methods to check answers and score:
+    
+    q1.check_answer()
+    question_score = q1.update_score()
+    if q1.check_answer():
+        return html_page.replace("$$results$$", "Your result is correct and your score is " + str(question_score) + " !")
+    
+
     
     
     

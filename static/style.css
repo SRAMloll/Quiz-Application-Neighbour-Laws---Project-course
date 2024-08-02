@@ -58,7 +58,7 @@ h1 {
     margin-bottom: 10px;
   }
 
-  #querybutton {
+  .querybutton {
     display: inline-block;
     padding: 10px 20px;
     background-color: #428bca;
@@ -71,7 +71,7 @@ h1 {
     margin-right: 10px;
   }
   
-  #querybutton:hover {
+  .querybutton:hover {
     background-color: #3071a9;
   }
 
@@ -90,4 +90,9 @@ h1 {
   
   #restartbutton:hover {
     background-color: #3071a9;
+  }
+
+  .divider {
+    border-top: 3px solid #988d8d;
+    border-radius: 2px;
   }
