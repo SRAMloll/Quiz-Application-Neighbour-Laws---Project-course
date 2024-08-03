@@ -96,3 +96,8 @@ h1 {
     border-top: 3px solid #988d8d;
     border-radius: 2px;
   }
+
+  .sources {
+    margin-bottom: 12px;
+    display: block;
+  }

@@ -31,17 +31,16 @@ def check_results():
         def __init__ (self, correct_answer, user_answer):
             self.correct_answer = correct_answer
             self.user_answer = user_answer
-            
+            self.score = 0
             
         def check_answer (self):
-            return self.user_answer == self.correct_answer
+            return self.user_answer.upper() == self.correct_answer
               
                                 
         def update_score (self):
-            score_question = 0
             if self.check_answer():
-                score_question =+ 1 
-            return score_question
+                self.score =+ 1 
+            return self.score
                         
     ### Creating quiz questions (objects)
     q1 = Quiz_game("B", flask.request.args.get("query1"))
@@ -54,10 +53,13 @@ def check_results():
     
     ### Calling the methods to check answers and score:
     
-    q1.check_answer()
-    question_score = q1.update_score()
-    if q1.check_answer():
-        return html_page.replace("$$results$$", "Your result is correct and your score is " + str(question_score) + " !")
+    for q in questions_list:
+        q.check_answer()
+        q.update_score()
+
+    total_score = int(q1.score) + int(q2.score) + int(q3.score) + int(q4.score) + int(q5.score)
+
+    return html_page.replace("$$results$$", "Your score is " + str(total_score) + " out of 5!")
     
 
     
