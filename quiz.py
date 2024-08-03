@@ -10,6 +10,7 @@ def get_html(page_name) :
     html_file.close()
     return content
 
+
 ## route 1: welcome page 
 
 @app.route("/")
@@ -61,7 +62,10 @@ def check_results():
 
     return html_page.replace("$$results$$", "Your score is " + str(total_score) + " out of 5!")
     
-
+## route 4: display the correct answer pagee
+@app.route("/answers.html")
+def answers():
+    return get_html("answers")
     
     
     

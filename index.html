@@ -11,13 +11,24 @@
         <h1 id="title"> The Neighbour Quiz </h1>
         <br>
         <img src="static/neighbour.png" id = "image" alt="neighbour">
-    
         
-            <form action="/quiz.html">
-            <input type="submit" value="Start the Quiz!" id="startbutton" />
-            </form>
+        
+        <div id="welcome">
+            Hey Neighbour! What is your name? <br>
+        
+          <input type="text" id = "nameQuery" placeholder = "Your name here"><br><br>
+          <input type="button" value = "Save my name" id ="addbutton"> <br> <br>
+         </div> 
+         <br>
+         <hr class="divider">
+         <br>
+          <form action="/quiz.html"> 
+          <input type="submit" value="Start the Quiz" id="startbutton" />
+        </form>
         <br>
         
     </div>
+
+    <script src="static/script.js"></script>
 </body>
 </html>

@@ -17,3 +17,16 @@
         <img src="static/neighbour.png" id = "Image" alt="neighbour">
         <br><br><br>
         </div>
+
+        working only for first question:
+        
+         ### Showing the questions and the options
+    for q in questions_list:
+
+        html_page = html_page.replace("$$quiz$$", q.question)
+        options = q.option_1 + "<br><br>" + q.option_2 + "<br><br>" + q.option_3
+        return html_page.replace("$$choices$$", options)
+
+    for q in questions_list:
+        q.check_answer()
+        q.update_score()

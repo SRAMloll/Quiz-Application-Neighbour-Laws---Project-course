@@ -28,4 +28,5 @@ www.raiffeisen.ch
 www.energie-environnement.ch
 
 Code inspiration:
-Thanks to the following Youtubers for sharing their knowledge
+https://pub.aimind.so/build-your-own-quiz-game-in-python-24737ecf366d
+
