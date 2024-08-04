@@ -1,4 +1,5 @@
 import flask
+import math
 
 app = flask.Flask("quiz")
 
@@ -58,11 +59,12 @@ def check_results():
         q.check_answer()
         q.update_score()
 
-    total_score = int(q1.score) + int(q2.score) + int(q3.score) + int(q4.score) + int(q5.score)
+    scores = [q1.score, q2.score, q3.score, q4.score, q5.score]
+    total_score = round(math.fsum(scores))
 
     return html_page.replace("$$results$$", "Your score is " + str(total_score) + " out of 5!")
     
-## route 4: display the correct answer pagee
+## route 4: display the correct answers pagee
 @app.route("/answers.html")
 def answers():
     return get_html("answers")
