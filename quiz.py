@@ -54,15 +54,19 @@ def check_results():
     questions_list = [q1, q2, q3, q4, q5]
     
     ### Calling the methods to check answers and score:
-    
+        
     for q in questions_list:
-        q.check_answer()
-        q.update_score()
+        if (q.user_answer == "A") or (q.user_answer == "B") or (q.user_answer == "C") or (q.user_answer == "a") or (q.user_answer == "b") or (q.user_answer == "c"): 
+            q.check_answer()
+            q.update_score()
 
-    scores = [q1.score, q2.score, q3.score, q4.score, q5.score]
-    total_score = round(math.fsum(scores))
-
-    return html_page.replace("$$results$$", "Your score is " + str(total_score) + " out of 5!")
+            scores = [q1.score, q2.score, q3.score, q4.score, q5.score]
+            total_score = round(math.fsum(scores))
+            message = "Your score is " + str(total_score) + " out of 5!"
+        else:
+            message = "Please retry again and check that you have entered a valid choice: A,B or C."
+    
+    return html_page.replace("$$results$$", message )
     
 ## route 4: display the correct answers pagee
 @app.route("/answers.html")
