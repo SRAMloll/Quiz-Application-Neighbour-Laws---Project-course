@@ -6,7 +6,7 @@ The user is informed of his score upon clicking on the submit button.
 The score is displayed after answering all the questions (5 in total).
 A Restart button allows to restart the quizz, and the score will be set to 0.
 The theme chosen of the quiz is Neighbour's rights. Gamifying the law to render it a little less boring...
-
+The new feature implemented is the logic of the game to check each answers and calculate the score by creating a class with two methods.
 
 
 ## Prerequisites
