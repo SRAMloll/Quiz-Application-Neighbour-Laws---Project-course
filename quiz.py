@@ -11,6 +11,20 @@ def get_html(page_name) :
     html_file.close()
     return content
 
+## Creating a class Question:
+class QuizGame:
+    def __init__ (self, correct_answer, user_answer):
+        self.correct_answer = correct_answer
+        self.user_answer = user_answer
+        self.score = 0
+            
+    def check_answer (self):
+        return self.user_answer.upper() == self.correct_answer
+              
+    def update_score (self):
+        if self.check_answer():
+            self.score =+ 1 
+        return self.score
 
 ## route 1: welcome page 
 
@@ -28,28 +42,14 @@ def play_quiz():
 def check_results():
     html_page = get_html("result")
 
-    ### Creating a class Question:
-    class Quiz_game:
-        def __init__ (self, correct_answer, user_answer):
-            self.correct_answer = correct_answer
-            self.user_answer = user_answer
-            self.score = 0
-            
-        def check_answer (self):
-            return self.user_answer.upper() == self.correct_answer
-              
-                                
-        def update_score (self):
-            if self.check_answer():
-                self.score =+ 1 
-            return self.score
+ 
                         
     ### Creating quiz questions (objects)
-    q1 = Quiz_game("B", flask.request.args.get("query1"))
-    q2 = Quiz_game("A", flask.request.args.get("query2"))
-    q3 = Quiz_game("C", flask.request.args.get("query3"))
-    q4 = Quiz_game("A", flask.request.args.get("query4"))
-    q5 = Quiz_game("C", flask.request.args.get("query5"))
+    q1 = QuizGame("B", flask.request.args.get("query1"))
+    q2 = QuizGame("A", flask.request.args.get("query2"))
+    q3 = QuizGame("C", flask.request.args.get("query3"))
+    q4 = QuizGame("A", flask.request.args.get("query4"))
+    q5 = QuizGame("C", flask.request.args.get("query5"))
     
     questions_list = [q1, q2, q3, q4, q5]
     

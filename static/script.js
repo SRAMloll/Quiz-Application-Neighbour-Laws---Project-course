@@ -2,6 +2,7 @@
 const nameInput = document.getElementById("welcome");
 const nameQuery = document.getElementById("nameQuery");
 const addButton = document.getElementById("addbutton");
+let old = nameInput.innerHTML 
 
 
 // function to add item to the list and store in Local Storage
@@ -30,15 +31,26 @@ function displaySavedItems() {
     if (localStorage.getItem(i.toString()) !== null) {
         const savedItems = document.createElement("p");
         savedItems.innerHTML = localStorage.getItem(i.toString());
-        nameInput.innerHTML = savedItems.innerHTML;
+        nameInput.innerHTML = savedItems.innerHTML + "<br><br>";
+        const logOutButton = document.createElement("button")
+        logOutButton.innerText = "Log out"
+        logOutButton.id = "logOutButton"
+        nameInput.appendChild (logOutButton)
       }
     }
   }
 
+// function to log out 
 
+function logOut() {
+    localStorage.clear();
+    nameInput.innerHTML = old
+}
 
 
 // adding the event listeners to the buttons
 addButton.addEventListener("click", addToLocalStorage);
 displaySavedItems();
+
+logOutButton.addEventListener("click", logOut)
 
