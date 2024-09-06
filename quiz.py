@@ -111,9 +111,9 @@ def display_scores():
 
     ##save user name
     user_name = flask.request.args.get("name")
-    try:
+    if user_name != "":
         save_name(user_name)
-    except:
+    else:
         user_name= "Unknown"
         save_name(user_name)
     

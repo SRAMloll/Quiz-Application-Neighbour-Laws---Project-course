@@ -3,5 +3,7 @@
 1 point(s): Sally 
 2 point(s): Nelly
 0 point(s): Peter
-
 2 point(s): John
+2 point(s): Emi
+5 point(s): Simon
+5 point(s): Unknown
