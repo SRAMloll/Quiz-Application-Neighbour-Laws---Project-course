@@ -1,9 +1,15 @@
 //setting up the elements to be used
 const nameInput = document.getElementById("welcome");
 const nameQuery = document.getElementById("nameQuery");
-const addButton = document.getElementById("addbutton");
+const addButton = document.getElementById("addButton");
 const logOutButton = document.createElement("button");
-let old = nameInput.innerHTML; 
+const newAddButton = document.createElement("button");
+newAddButton.innerText = "Save my name";
+newAddButton.id = "newAddButton";
+const newNameQuery = document.createElement("input");
+newNameQuery.type= "text"
+newNameQuery.placeholder = "Your name here"
+
 
 
 // function to add item to the list and store in Local Storage
@@ -33,9 +39,9 @@ function displaySavedItems() {
         const savedItems = document.createElement("p");
         savedItems.innerHTML = localStorage.getItem(i.toString());
         nameInput.innerHTML = savedItems.innerHTML + "<br><br>";
-        logOutButton.innerText = "Log out"
-        logOutButton.id = "logOutButton"
-        nameInput.appendChild (logOutButton)
+        logOutButton.innerText = "Log out";
+        logOutButton.id = "logOutButton";
+        nameInput.appendChild (logOutButton);
       }
     }
   }
@@ -44,14 +50,36 @@ function displaySavedItems() {
 
 function logOut() {
     localStorage.clear();
-    nameInput.innerHTML = old
-    addButton.addEventListener("click", addToLocalStorage);
-    displaySavedItems()
+    nameInput.innerHTML= "Hey Neighbour! What is your name? <br>";
+    nameInput.appendChild(newNameQuery);
+    nameInput.appendChild(newAddButton);
+  
 }
 
+// function to add new item to the list and store in Local Storage
+
+function addToListn () {
+  if (newNameQuery.value != "") {
+  const newItem = document.createElement("p");
+  newItem.innerHTML = "Welcome " + newNameQuery.value + "!";
+  nameInput.innerHTML = newItem.innerHTML;
+  }
+}
+
+function addToLocalStoragen () {
+  addToListn ();
+  if (newNameQuery.value != "") {
+  const position = localStorage.length + 1;
+  localStorage.setItem (position, "Welcome back " + newNameQuery.value + "!");
+  newNameQuery.value = "";
+  }
+}
 
 // adding the event listeners to the buttons
 addButton.addEventListener("click", addToLocalStorage);
 displaySavedItems();
 
 logOutButton.addEventListener("click", logOut)
+
+newAddButton.addEventListener("click", addToLocalStoragen);
+displaySavedItems()

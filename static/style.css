@@ -37,7 +37,7 @@ h1 {
     background-color: #3071a9;
   }
 
-  #addbutton {
+  #addButton {
     display: inline-block;
     padding: 10px 20px;
     background-color: #428bca;
@@ -50,7 +50,7 @@ h1 {
     margin-right: 10px;
   }
   
-  #addbutton:hover {
+  #addButton:hover {
     background-color: #3071a9;
   }
   #image {
@@ -192,5 +192,22 @@ h1 {
   }
   
   #addScoreButton:hover {
+    background-color: #3071a9;
+  }
+
+  #newAddButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #428bca;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  #newAddButton:hover {
     background-color: #3071a9;
   }
